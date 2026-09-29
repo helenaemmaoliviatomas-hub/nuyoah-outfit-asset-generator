@@ -1,0 +1,11 @@
+interface:
+  display_name: "服装资产板生成器"
+  short_description: "从服装参考提取整套穿搭与可复用拆件"
+  default_prompt: "使用 $nuyoah-outfit-asset-generator，把这张参考图中的服装提取为整套与拆件资产板。"
+compatibility:
+  canonical_format: "agent-skills"
+  adapter_targets: ["openai", "generic"]
+  activation: {mode: "manual", paths: []}
+  execution: {context: "inline", shell: "bash"}
+  trust: {source_tier: "local", remote_inline_execution: "forbid", remote_metadata_policy: "allow-metadata-only"}
+  degradation: {openai: "metadata-adapter", generic: "neutral-source"}
